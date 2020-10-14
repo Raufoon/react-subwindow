@@ -30,14 +30,14 @@
   top: 0;
   right: 0;
   padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 0px;
 }
 
 .Modal .closeBtn:hover{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: lightpink;
 }
 
