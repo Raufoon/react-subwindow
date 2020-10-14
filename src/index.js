@@ -4,7 +4,7 @@ import { blinkDomElement, getAvailableZIndex, releaseLastZIndex } from './utils'
 import { ReactComponent as CloseIcon } from './assets/icons/close.svg'
 import styles from './index.module.css'
 
-export function closeModal(event) {
+export function closeLastSubwindow(event) {
   if (event) event.persist()
   const lastModalElement = document.getElementById('modal-root').lastChild
   ReactDOM.unmountComponentAtNode(lastModalElement)
@@ -12,7 +12,7 @@ export function closeModal(event) {
   releaseLastZIndex()
 }
 
-export function createModal(content, settings = {}) {
+export function createSubwindow(content, settings = {}) {
   const modalRoot = document.getElementById('modal-root')
   const modalZIndex = getAvailableZIndex()
   const modalElement = document.createElement('div')
@@ -33,7 +33,7 @@ export function createModal(content, settings = {}) {
         {!settings.hideClose && (
           <button
             className={styles.closeBtn}
-            onClick={closeModal}
+            onClick={closeLastSubwindow}
             style={{ zIndex: modalZIndex }}
           >
             <CloseIcon height={`"15px"`} width={`"15px"`} fill={`"#dd546e"`} />
@@ -60,7 +60,7 @@ function ConfirmationModal(props) {
     () => async (event) => {
       setPending(true)
       await confirm()
-      closeModal(event)
+      closeLastSubwindow(event)
     },
     []
   )
@@ -74,7 +74,7 @@ function ConfirmationModal(props) {
     <div className={styles.ConfirmationModal}>
       <label>{text || `Are you sure?`}</label>
       <div style={{ display: 'flex', flexDirection: 'row', marginTop: `10px` }}>
-        <button onClick={closeModal}>No</button>
+        <button onClick={closeLastSubwindow}>No</button>
         <button className={styles.confirmBtn} onClick={onConfirm}>
           Yes
         </button>
@@ -84,7 +84,7 @@ function ConfirmationModal(props) {
 }
 
 export function onConfirmationPopup(text, confirm, settings = {}) {
-  createModal(
+  createSubwindow(
     <ConfirmationModal
       text={text}
       confirm={confirm}
