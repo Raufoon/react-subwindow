@@ -13,7 +13,13 @@ export function closeLastSubwindow(event) {
 }
 
 export function createSubwindow(content, settings = {}) {
-  const modalRoot = document.getElementById('modal-root')
+  let modalRoot = document.getElementById('modal-root')
+  if (!modalRoot) {
+    modalRoot = document.createElement('div')
+    modalRoot.setAttribute(`id`, `modal-root`)
+    document.body.appendChild(modalRoot)
+  }
+
   const modalZIndex = getAvailableZIndex()
   const modalElement = document.createElement('div')
   modalRoot.appendChild(modalElement)
