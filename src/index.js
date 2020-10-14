@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import ReactDOM from 'react-dom'
 import { blinkDomElement, getAvailableZIndex, releaseLastZIndex } from './utils'
-import { ReactComponent as CloseIcon } from './assets/icons/close.svg'
 import styles from './styles.module.css'
 
 export function closeLastSubwindow(event) {
@@ -42,7 +41,7 @@ export function createSubwindow(content, settings = {}) {
             onClick={closeLastSubwindow}
             style={{ zIndex: modalZIndex }}
           >
-            <CloseIcon height='15px' width='15px' fill='#dd546e' />
+            X
           </button>
         )}
 

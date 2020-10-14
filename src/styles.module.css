@@ -33,12 +33,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: crimson;
+  font-weight: bold;
   border: none;
   border-radius: 0px;
 }
 
 .Modal .closeBtn:hover{
   background-color: lightpink;
+  color: white;
 }
 
 
