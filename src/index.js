@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react'
 import ReactDOM from 'react-dom'
 import { blinkDomElement, getAvailableZIndex, releaseLastZIndex } from './utils'
 import { ReactComponent as CloseIcon } from './assets/icons/close.svg'
-import styles from './index.module.css'
+import styles from './styles.module.css'
 
 export function closeLastSubwindow(event) {
   if (event) event.persist()
