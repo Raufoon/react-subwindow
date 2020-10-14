@@ -42,7 +42,7 @@ export function createSubwindow(content, settings = {}) {
             onClick={closeLastSubwindow}
             style={{ zIndex: modalZIndex }}
           >
-            <CloseIcon height={`"15px"`} width={`"15px"`} fill={`"#dd546e"`} />
+            <CloseIcon height='15px' width='15px' fill='#dd546e' />
           </button>
         )}
 
