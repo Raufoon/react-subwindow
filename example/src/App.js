@@ -14,7 +14,7 @@ const App = () => {
     <div>
       <h1>This is level 1 modal</h1>
       <button
-        onClick={createSubwindow(subwindow2)}>Open Modal</button>
+        onClick={() => createSubwindow(subwindow2)}>Open Modal</button>
     </div>
   )
 
@@ -22,7 +22,7 @@ const App = () => {
     <div>
       <h1>Usage of the functions</h1>
       <button
-        onClick={createSubwindow(subwindow1)}>Open Modal</button>
+        onClick={() => createSubwindow(subwindow1)}>Open Modal</button>
     </div>
   )
 }
