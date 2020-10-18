@@ -110,3 +110,7 @@ export function onConfirmationPopup(text, confirm, settings = {}) {
 export function getZIndex() {
   return getAvailableZIndex()
 }
+
+export function releaseZIndex() {
+  return releaseLastZIndex()
+}

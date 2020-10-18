@@ -28,6 +28,18 @@ const App = () => {
           </div>
         )}
       >Open Modal</button>
+      <br/>
+      <button
+        onClick={
+          () => {
+            onConfirmationPopup("Are you sure", function confirm() {
+              window.alert("This will show up if you click on 'Confirm'")
+            })
+          }
+        }
+      >
+        Do something after confirmation
+      </button>
     </div>
   )
 }
@@ -35,6 +47,47 @@ const App = () => {
 export default App
 
 ```
+
+### API
+```js
+import { createSubwindow, onConfirmationPopup, getZIndex, releaseZIndex } from 'react-subwindow'
+```
+
+#### `createSubwindow(reactElement)`
+
+__Example__
+
+```js
+createSubwindow(
+  <div>
+    <h1>Saying hello from modal</h1>
+  </div>
+)
+```
+
+#### `onConfirmationPopup(title, onConfirm)`
+
+__Example__
+
+```js
+onConfirmationPopup(
+  "Are you sure", 
+  function confirm() {
+    window.alert("This will show up if you click on 'Confirm'")
+  }
+)
+```
+
+#### `getZIndex()`
+
+__Returns__ `number` lowest available z index
+
+Use this method to book a z-index value
+
+#### `releaseZIndex()`
+
+Release the last z index returned by getZIndex()
+
 
 ## License
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { createSubwindow } from 'react-subwindow'
+import { createSubwindow, onConfirmationPopup } from 'react-subwindow'
 import 'react-subwindow/dist/index.css'
 
 const App = () => {
@@ -23,6 +23,17 @@ const App = () => {
       <h1>Usage of the functions</h1>
       <button
         onClick={() => createSubwindow(subwindow1)}>Open Modal</button>
+      <button
+        onClick={
+          () => {
+            onConfirmationPopup("Are you sure", function confirm() {
+              window.alert("This will show up if you click on 'Confirm'")
+            })
+          }
+        }
+      >
+        Do something after confirmation
+      </button>
     </div>
   )
 }
