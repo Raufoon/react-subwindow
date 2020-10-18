@@ -31,7 +31,7 @@ export function createSubwindow(content, settings = {}) {
     >
       {/* The visible part of the Modal. Around it has a semi transparent effect on the whole window */}
       <div
-        className={styles.content}
+        className={`${styles.content} zoomin`}
         id={`modal_content_${modalZIndex}`}
         onClick={(e) => e.stopPropagation()}
       >

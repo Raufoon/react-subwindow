@@ -42,6 +42,7 @@
 .Modal .closeBtn:hover{
   background-color: lightpink;
   color: white;
+  cursor: pointer;
 }
 
 
@@ -101,4 +102,23 @@
   0% {background-color: #efefef}
   50% {background-color:#ffe99b;}
   100% {background-color: #efefef;}
+}
+
+.zoomin {
+  -webkit-animation: zoomin 400ms;
+  animation: zoomin 400ms;
+  -webkit-transform: scale(0,0); 
+  transform: scale(0,0);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes zoomin {
+  100% {
+    -webkit-transform: scale(1,1); 
+  }
+}
+@keyframes zoomin {
+  100% {
+    transform: scale(1,1); 
+  }
 }
